@@ -1,14 +1,14 @@
 express = require "express"
-port = process.env.PORT || 3001
 
 class ToitController
-    constructor: (@dir)->
+    constructor: (@dir, @port)->
+        @port = @port || 3001
         @app = express()
         @config()
         @definePaths()
 
     start:=>
-        @app.listen(port)
+        @app.listen(@port)
 
     config: =>
         pub = @dir + "/public"
