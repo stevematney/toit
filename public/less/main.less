@@ -16,8 +16,12 @@ body {
     left: 50%;
     .plus_animation;
     .plus_white;
-    &:hover, &.close{
+    text-decoration: none;
+    &:hover, &.close, &:focus, &:active{
         .plus_red;
+        border: none;
+        outline: none;
+        .appearance(none);
     }
     &.close:hover {
         .plus_white;

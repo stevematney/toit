@@ -58,7 +58,8 @@
       this.currentTop = this.originalTop;
     }
 
-    PlusController.prototype.openClose = function() {
+    PlusController.prototype.openClose = function(e) {
+      e.preventDefault();
       if (!this.open) {
         this.openNewTodo();
       } else {
@@ -286,7 +287,10 @@
   };
 
   addTodo = function() {
-    return todos.push(new Todo(plus_controller.plus));
+    var newTodo;
+    newTodo = new Todo(plus_controller.plus);
+    todos.push(newTodo);
+    return newTodo.todo_element.focus();
   };
 
   removeLastTodo = function() {

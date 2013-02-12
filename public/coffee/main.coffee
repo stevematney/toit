@@ -28,7 +28,8 @@ class PlusController
         @plus.css "top", @originalTop
         @currentTop = @originalTop
 
-    openClose: =>
+    openClose: (e)=>
+        e.preventDefault()
         if not @open then @openNewTodo() 
         else 
             removeLastTodo()
@@ -165,7 +166,9 @@ handleExistingTodos = ->
         todos.push newTodo
 
 addTodo = ->
-    todos.push new Todo(plus_controller.plus)
+    newTodo = new Todo(plus_controller.plus)
+    todos.push newTodo
+    newTodo.todo_element.focus()
 
 removeLastTodo = ()->
     position = todos.length - 1;
