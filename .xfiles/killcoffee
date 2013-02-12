@@ -1,0 +1,2 @@
+ps aux | ack "[c]offee.*(app|public|index)" | tr -s " " | cut -d ' ' -f 2 | xargs kill;
+ps aux | ack "xf [s]tartcoffee" | tr -s " " | cut -d ' ' -f 2 | xargs kill;

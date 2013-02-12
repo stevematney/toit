@@ -8,4 +8,6 @@
 
   app.start();
 
+  console.log("starting");
+
 }).call(this);

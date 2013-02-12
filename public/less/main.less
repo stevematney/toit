@@ -1,0 +1,88 @@
+body {
+    text-align: center;
+    background-color: #5a5a5c;
+}
+
+#add_todo {
+    font-family: @open_sans;
+    font-weight: 400;
+    font-size: 75px;
+    line-height: 30px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: 0 auto 0 -20px;
+    left: 50%;
+    .plus_animation;
+    .plus_white;
+    &:hover, &.close{
+        .plus_red;
+    }
+    &.close:hover {
+        .plus_white;
+    }
+    &.close {
+        .rotate(-45deg);
+        left: 15px;
+    }
+}
+
+h1 {
+    font-family: @open_sans;
+    .plus_white;
+    margin-bottom: 0;
+    font-size: 70px;
+    line-height: 70px;
+}
+
+.tag {
+    font-size: 24px;
+    font-family: @sansita;
+    margin-top: 0px;
+}
+
+#todo_holder {
+    text-align: right;
+    width: 330px;
+    position: relative;
+}
+
+.todo {
+    background-color: @toit_white;
+    max-width: 320px;
+    width: 320px;
+    min-height: 20px;
+    margin: 3px 0px 0px auto;
+    text-align: left;
+    padding: 5px;
+    &.new {
+        width: 285px;
+    }
+    & > .list_action_holder {
+        opacity: 1;
+    }
+}
+.container {
+    width: 320px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.list_action_holder {
+    position: absolute;
+    right: -20px;
+    margin-top: -30px;
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
+    .list_close {
+        .rotate(-45deg);
+        .plus_red;
+        font-family: @open_sans;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}

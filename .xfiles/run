@@ -1,0 +1,1 @@
+coffee -c index.coffee; node index.js &

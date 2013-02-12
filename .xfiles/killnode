@@ -1,0 +1,2 @@
+ps aux | ack "[n]ode index" | tr -s " " | cut -d ' ' -f 2 | xargs kill;
+ps aux | ack "[x]f run" | tr -s " " | cut -d ' ' -f 2 | xargs kill;

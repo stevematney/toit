@@ -1,0 +1,1 @@
+coffee -o app/js -w app/coffee & coffee -o public/js -w public/coffee & 
