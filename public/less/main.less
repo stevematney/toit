@@ -59,7 +59,7 @@ h1 {
     &.new {
         width: 285px;
     }
-    & > .list_action_holder {
+    &:hover + .list_action_holder {
         opacity: 1;
     }
 }
@@ -75,6 +75,7 @@ h1 {
     right: -20px;
     margin-top: -30px;
     opacity: 0;
+    .basic_animate();
     &:hover {
         opacity: 1;
     }
