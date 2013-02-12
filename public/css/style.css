@@ -591,7 +591,7 @@ h1 {
   max-width: 320px;
   width: 320px;
   min-height: 20px;
-  margin: 3px 0px 0px auto;
+  margin: 5px 0px 0px auto;
   text-align: left;
   padding: 5px 10px 5px 10px;
   -webkit-box-shadow: 0 0 1px 1px rgba(15, 15, 15, 0.8);
@@ -633,7 +633,7 @@ h1 {
   color: #333;
 }
 .container {
-  width: 320px;
+  width: 340px;
   text-align: center;
   margin: 0 auto;
   position: relative;

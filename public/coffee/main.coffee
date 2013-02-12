@@ -37,7 +37,7 @@ class PlusController
         @open = @plus.hasClass("close")
 
     openNewTodo: =>
-        subtraction = if todos.length > 0 then 2 else -1
+        subtraction = if todos.length > 0 then 4 else -1
         @plus.css("top", @currentTop - (@extraTop - subtraction))
         addTodo() 
         @plus.addClass("close")

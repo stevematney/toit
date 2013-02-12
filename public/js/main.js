@@ -71,7 +71,7 @@
 
     PlusController.prototype.openNewTodo = function() {
       var subtraction;
-      subtraction = todos.length > 0 ? 2 : -1;
+      subtraction = todos.length > 0 ? 4 : -1;
       this.plus.css("top", this.currentTop - (this.extraTop - subtraction));
       addTodo();
       return this.plus.addClass("close");

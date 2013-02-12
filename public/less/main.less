@@ -55,10 +55,10 @@ h1 {
 .todo {
     background-color: #333;
     color: @toit_white;
-    max-width: 320px;
-    width: 320px;
+    max-width: @content_width - 20;
+    width: @content_width - 20;
     min-height: 20px;
-    margin: 3px 0px 0px auto;
+    margin: 5px 0px 0px auto;
     text-align: left;
     padding: 5px 10px 5px 10px;
     .box-shadow(0 0 1px 1px rgba(15,15,15, .8));
@@ -78,7 +78,7 @@ h1 {
     }
 }
 .container {
-    width: 320px;
+    width: @content_width;
     text-align: center;
     margin: 0 auto;
     position: relative;
