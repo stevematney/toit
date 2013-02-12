@@ -16,7 +16,6 @@ class ChangeManager
         }
 
     updateApp: =>
-        console.log("updating happening now.")
         #do some updating
 
 class PlusController
@@ -37,13 +36,13 @@ class PlusController
         @open = @plus.hasClass("close")
 
     openNewTodo: =>
-        @plus.css("top", @currentTop - (@extraTop - 2))
+        subtraction = if todos.length > 0 then 2 else -1
+        @plus.css("top", @currentTop - (@extraTop - subtraction))
         addTodo() 
         @plus.addClass("close")
 
     close: =>
         @currentTop = @container.height() + @extraTop
-        console.log("Setting top to #{ @currentTop } because the container's height is #{ @container.height() }")
         @plus.css("top", @currentTop)
         @plus.removeClass "close"
 
@@ -60,6 +59,7 @@ class Todo
         @todo_element = @generate_element()
         @plus.before @todo_element
         @todo_element.keypress $.proxy(@handleEnter, @)
+        #@todo_element.blur $.proxy(@completeEntry, @)
 
     createSupplements: =>
         if @listAffecter?
@@ -79,7 +79,6 @@ class Todo
     removeListAffecter: =>
         if not @listAffecter?
             return
-        console.log "Removing listAffecter"
         @listAffecter.destroy()
         @listAffecter = null
 
@@ -88,6 +87,9 @@ class Todo
         if e.which != 13
             return;
         e.preventDefault()
+        @completeEntry()
+
+    completeEntry: =>
         @enterTodo()
         @createSupplements()
 
@@ -151,7 +153,6 @@ handleExistingTodos = ->
         decodedCookies = decodeURIComponent(cookiePair[1])
         decodedCookies = decodedCookies.replace("j:[", "").replace(/]$/, "").replace(/\"/g, "")
         existingTodos = decodedCookies.split(",")
-        console.log existingTodos
         break
     if not existingTodos?
         return

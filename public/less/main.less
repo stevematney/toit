@@ -44,23 +44,33 @@ h1 {
 
 #todo_holder {
     text-align: right;
-    width: 330px;
+    width: 340px;
     position: relative;
 }
 
 .todo {
-    background-color: @toit_white;
+    background-color: #333;
+    color: @toit_white;
     max-width: 320px;
     width: 320px;
     min-height: 20px;
     margin: 3px 0px 0px auto;
     text-align: left;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
+    .box-shadow(0 0 10px rgba(15,15,15, .8) outset);
+    .basic_animate();
+    .appearance(none);
+    outline: none;
     &.new {
         width: 285px;
     }
     &:hover + .list_action_holder {
         opacity: 1;
+    }
+    &:active, &:focus {
+        .box-shadow(0 0 4px rgba(15,15,15, .8) inset);
+        background-color: @toit_white;
+        color: #333;
     }
 }
 .container {
@@ -73,6 +83,7 @@ h1 {
 .list_action_holder {
     position: absolute;
     right: -20px;
+    padding-left: 20px;
     margin-top: -30px;
     opacity: 0;
     .basic_animate();

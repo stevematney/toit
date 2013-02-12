@@ -31,9 +31,7 @@
       });
     };
 
-    ChangeManager.prototype.updateApp = function() {
-      return console.log("updating happening now.");
-    };
+    ChangeManager.prototype.updateApp = function() {};
 
     return ChangeManager;
 
@@ -71,14 +69,15 @@
     };
 
     PlusController.prototype.openNewTodo = function() {
-      this.plus.css("top", this.currentTop - (this.extraTop - 2));
+      var subtraction;
+      subtraction = todos.length > 0 ? 2 : -1;
+      this.plus.css("top", this.currentTop - (this.extraTop - subtraction));
       addTodo();
       return this.plus.addClass("close");
     };
 
     PlusController.prototype.close = function() {
       this.currentTop = this.container.height() + this.extraTop;
-      console.log("Setting top to " + this.currentTop + " because the container's height is " + (this.container.height()));
       this.plus.css("top", this.currentTop);
       return this.plus.removeClass("close");
     };
@@ -102,6 +101,8 @@
       this.setText = __bind(this.setText, this);
 
       this.enterTodo = __bind(this.enterTodo, this);
+
+      this.completeEntry = __bind(this.completeEntry, this);
 
       this.handleEnter = __bind(this.handleEnter, this);
 
@@ -148,7 +149,6 @@
       if (!(this.listAffecter != null)) {
         return;
       }
-      console.log("Removing listAffecter");
       this.listAffecter.destroy();
       return this.listAffecter = null;
     };
@@ -158,6 +158,10 @@
         return;
       }
       e.preventDefault();
+      return this.completeEntry();
+    };
+
+    Todo.prototype.completeEntry = function() {
       this.enterTodo();
       return this.createSupplements();
     };
@@ -262,7 +266,6 @@
       decodedCookies = decodeURIComponent(cookiePair[1]);
       decodedCookies = decodedCookies.replace("j:[", "").replace(/]$/, "").replace(/\"/g, "");
       existingTodos = decodedCookies.split(",");
-      console.log(existingTodos);
       break;
     }
     if (!(existingTodos != null)) {
