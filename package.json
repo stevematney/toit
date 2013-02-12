@@ -2,9 +2,12 @@
   "name": "Toit",
   "description": "get **it done",
   "version": "0.0.1",
-  "private": true,
   "dependencies": {
     "express": "3.1.0"
+  },
+  "engines": {
+    "node": "0.8.9",
+    "npm": "1.1.65"
   }
 }
 
