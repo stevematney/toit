@@ -265,6 +265,9 @@
       console.log(existingTodos);
       break;
     }
+    if (!(existingTodos != null)) {
+      return;
+    }
     _results = [];
     for (_j = 0, _len1 = existingTodos.length; _j < _len1; _j++) {
       todo = existingTodos[_j];

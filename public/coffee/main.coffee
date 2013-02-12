@@ -153,6 +153,8 @@ handleExistingTodos = ->
         existingTodos = decodedCookies.split(",")
         console.log existingTodos
         break
+    if not existingTodos?
+        return
     for todo in existingTodos
         if(todo == "undefined")
             continue
