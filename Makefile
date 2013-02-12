@@ -15,6 +15,7 @@ css:
 # compile JavaScript
 js: 
 	coffee --compile -o public/js public/coffee
+	coffee --compile index.coffee
  
 # start node
 run: 
